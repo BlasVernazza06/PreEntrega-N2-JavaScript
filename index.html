@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Simulador de Turnos Médicos</title>
-    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <h1>Simulador de Turnos Médicos</h1>
-        <p>
-            Este proyecto es un simulador simple para registrar turnos médicos usando JavaScript. Toda la interacción se realiza mediante cuadros de diálogo y la consola. El usuario puede ingresar su nombre, elegir una especialidad, día y hora, y ver un resumen de los turnos registrados.
-        </p>
-    </div>
-    <script src="index.js"></script>
+<body class="font-[poppins] bg-slate-100 flex items-center justify-center min-h-screen">
+  <div class="w-full max-w-md bg-white p-6 rounded-lg shadow-xl border border-gray-200">
+    <header class="flex flex-col ">
+        <h1 class="text-2xl font-bold text-blue-600 mb-1 text-center">Simulador de Turnos Médicos</h1>
+        <span class="text-sm text-gray-400 text-center mb-5">Este proyecto es un simulador simple para registrar turnos médicos.</span>
+    </header>
+    <form id="turno-form" class="space-y-4">
+        <input type="text" id="nombre" placeholder="Nombre del paciente" class="w-full border rounded-lg px-3 py-2" required />
+      
+      <select id="especialidad" class="w-full border rounded px-2 py-2" required>
+        <option value="">Seleccionar especialidad</option>
+        <option>Clínica Médica</option>
+        <option>Pediatría</option>
+        <option>Cardiología</option>
+        <option>Dermatología</option>
+      </select>
+      
+      <input type="date" id="fecha" class="w-full border rounded-lg px-3 py-2" required />
+      <input type="time" id="hora" class="w-full border rounded-lg px-3 py-2" required />
+      
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-700">Reservar Turno</button>
+    </form>
+
+    <div id="ultimo-turno" class="mt-6"></div>
+
+  </div>
+
+  <script src="js/index.js"></script>
 </body>
 </html>
