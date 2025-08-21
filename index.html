@@ -1,41 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Simulador de Turnos Médicos</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simulador de Turnos Médicos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
-<body class="font-[poppins] bg-slate-100 flex items-center justify-center min-h-screen">
-  <div class="w-full max-w-md bg-white p-6 rounded-lg shadow-xl border border-gray-200">
-    <header class="flex flex-col ">
-        <h1 class="text-2xl font-bold text-blue-600 mb-1 text-center">Simulador de Turnos Médicos</h1>
-        <span class="text-sm text-gray-400 text-center mb-5">Este proyecto es un simulador simple para registrar turnos médicos.</span>
-    </header>
-    <form id="turno-form" class="space-y-4">
-        <input type="text" id="nombre" placeholder="Nombre del paciente" class="w-full border rounded-lg px-3 py-2" required />
+<body class="bg-gradient-to-br from-blue-50 to-slate-100 min-h-screen flex items-center justify-center font-['Poppins']">
+
+  <div class="w-full max-w-2xl bg-white/90 backdrop-blur-md rounded-2xl shadow-xl p-8">
+    <h1 class="text-3xl font-bold text-blue-600 mb-6 text-center">Reserva tu turno médico</h1>
+    
+    <!-- Formulario -->
+    <form id="turno-form" class="space-y-5">
+      <input type="text" id="nombre" placeholder="Nombre del paciente" 
+        class="w-full border rounded-xl px-4 py-3 shadow-sm focus:ring-2 focus:ring-blue-500 outline-none transition" required />
+
+      <!-- Cards de especialidades -->
+      <div>
+        <p class="font-semibold mb-2 text-gray-700">Selecciona una especialidad:</p>
+        <div id="especialidades" class="grid grid-cols-2 gap-3"></div>
+        <input type="hidden" id="especialidad" required />
+      </div>
+
+      <!-- Input de fecha y hora con Flatpickr -->
+      <div class="flex gap-3">
+        <input type="text" id="fechaHora" class="flex-1 border rounded-xl px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none transition" placeholder="Selecciona fecha y hora" required />
+      </div>
       
-      <select id="especialidad" class="w-full border rounded px-2 py-2" required>
-        <option value="">Seleccionar especialidad</option>
-        <option>Clínica Médica</option>
-        <option>Pediatría</option>
-        <option>Cardiología</option>
-        <option>Dermatología</option>
-      </select>
-      
-      <input type="date" id="fecha" class="w-full border rounded-lg px-3 py-2" required />
-      <input type="time" id="hora" class="w-full border rounded-lg px-3 py-2" required />
-      
-      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-700">Reservar Turno</button>
+      <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-xl shadow-md hover:bg-blue-700 hover:scale-[1.02] transition transform">
+        Reservar Turno
+      </button>
     </form>
 
-    <div id="ultimo-turno" class="mt-6"></div>
-
+    <!-- Último turno -->
+    <div id="ultimo-turno" class="mt-8 animate-fadeIn"></div>
   </div>
 
-  <script src="js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+  <script src="js/index.js"></script> 
 </body>
 </html>

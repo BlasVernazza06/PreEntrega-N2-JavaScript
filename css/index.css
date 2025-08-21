@@ -1,0 +1,32 @@
+/* Día seleccionado */
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+  @apply bg-blue-600 text-white rounded-xl;
+}
+
+/* Día al pasar el mouse */
+.flatpickr-day:hover {
+  @apply bg-blue-100 text-blue-800 rounded-xl;
+}
+
+/* Hoy */
+.flatpickr-day.today {
+  @apply border border-blue-500 rounded-xl;
+}
+
+/* Botones de hora y flechas */
+.flatpickr-prev-month,
+.flatpickr-next-month {
+  @apply text-blue-600 hover:text-blue-800;
+}
+
+/* Fondo de cabecera del calendario */
+.flatpickr-months {
+  @apply bg-blue-50 rounded-t-2xl mb-2;
+}
+
+/* Input de fecha y hora */
+#fechaHora {
+  @apply border-blue-300 focus:border-blue-500 focus:ring-blue-400;
+}

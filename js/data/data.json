@@ -1,0 +1,7 @@
+[
+    { "id": 1, "nombre": "Clínica Médica", "icon": "stethoscope" },
+    { "id": 2, "nombre": "Pediatría", "icon": "baby" },
+    { "id": 3, "nombre": "Cardiología", "icon": "heart" },
+    { "id": 4, "nombre": "Dermatología", "icon": "sun" }
+]
+  
